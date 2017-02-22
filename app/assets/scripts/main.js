@@ -1,6 +1,6 @@
 (function(window, document) {
 
-	function init() {
+	function init(data) {
 		
 		setup();
 	}
@@ -70,8 +70,8 @@
 	window.onload = function() {
 		var url = 'http://roberval.chaordicsystems.com/challenge/challenge.json?callback=X';
 
-		loadExternalUrl(url, function() {
-			init();	
+		getJSON(url, function(data) {
+			init(data.data);	
 		});		
 	};
 
