@@ -1,8 +1,24 @@
-(function(window) {
+(function(window, document) {
 
 	function init() {
+		
 		setup();
 	}
+
+	function buildProductSeen(item) {
+		var html = productTemplate;
+		html = html.replace('{{detailUrl}}', item.detailUrl);
+		html = html.replace('{{imageName}}', item.imageName);
+		html = html.replace('{{name}}', item.name);
+		html = html.replace('{{oldPrice}}', item.oldPrice);
+		html = html.replace('{{price}}', item.price);
+		html = html.replace('{{paymentConditions}}', item.productInfo.paymentConditions);
+
+
+
+		document.getElementById('product-seen').innerHTML = html;
+	}
+
 
 	function setup() {
 		var prevButton = document.getElementById('navigate-prev');
@@ -11,7 +27,9 @@
 		var boxListProducts = document.getElementById('box-recommended-products');
 
 		var minDistance = 0;
-		var maxDistance = '-' + (((listProducts.children[0].clientWidth + 10)  * listProducts.children.length) - boxListProducts.clientWidth - 1);
+
+		// listProducts.children.length (PODE PEGAR DO JSON)
+		var maxDistance = (((listProducts.children[0].clientWidth + 10)  * listProducts.children.length) - boxListProducts.clientWidth - 1) * -1;
 
 		listProducts.style.left = listProducts.style.left === '' ? 0 : listProducts.style.left;
 		prevButton.classList.add("disabled");
@@ -50,7 +68,11 @@
 	}	
 
 	window.onload = function() {
-		init();	
+		var url = 'http://roberval.chaordicsystems.com/challenge/challenge.json?callback=X';
+
+		loadExternalUrl(url, function() {
+			init();	
+		});		
 	};
 
 })(window, document);
