@@ -1,5 +1,8 @@
 # Desafio de Front-end da Chaordic
 
+## Para visualizar o teste, [acesse aqui!](https://hyagogoularte.github.io/product-showcase/app/)
+#### Para acessar o teste por completo, é preciso liberar o carregamento de scripts não "seguros", pois é usado JSONP.
+
 O desafio consiste na construção de uma vitrine, em javascript puro e sem frameworks, do Chaordic OnSite que solicita as informações do produto referência e da lista de produtos recomendados com paginação de um serviço remoto.
 
 Os seguintes quesitos serão avaliados neste desafio:
