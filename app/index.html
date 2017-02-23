@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <head>
+        <link rel="stylesheet" href="assets/styles/reset.css" type="text/css" />
+        <link rel="stylesheet" href="assets/styles/main.css" type="text/css" />
+        
+    </head>
+
+    <script id="product-template" type="x-template">
+        <a class="result-product-detail-url" href="" target="_blank">
+        	<section class="product-box">
+	        	<figure class="product-image">
+	        		<img class="result-product-image-name" src="" width="152" height="120">
+	        	</figure>
+	        	<div class="product-description">
+	        		<span class="result-product-description"></span>
+	        	</div>
+	        	<div class="product-price">
+	        		<div class="product-old-price">
+	        			De: <span class="result-product-old-price"></span>
+	        		</div>
+	        		<div class="product-current-price">
+	        			Por: <span class="result-product-price"></span>
+	        		</div>
+	        		<div class="product-divided-price">
+	        			<span class="result-product-payment-conditions"></span> <br> sem juros
+	        		</div>
+	        	</div>
+	        </section>
+        </a>        
+    </script>
+
+    <body>
+        <div class="container">
+            <div class="container-header">
+                <div class="content-one"> 
+                    <span class="title">Você visitou:</span>
+                </div>
+                <div class="content-two">
+                    <span class="title">e talvez se interesse por:</span>
+                </div>
+            </div>
+            <article class="container-products">
+                <section id="product-seen" class="product-seen"></section>
+                <section class="recommended-products">
+                    <div class="products-navigate-prev">
+                        <div id="navigate-prev"></div>
+                    </div>
+                    <div id="box-recommended-products" class="box-recommended-products">
+                        <ul id="list-recommended-products" class="list-recommended-products"></ul>
+                    </div>
+                    <div class="products-navigate-next">
+                        <div id="navigate-next"></div>
+                    </div>
+                </section>
+            </article>
+        </div>
+
+        <script src="assets/scripts/utils.js"></script>
+        <script src="assets/scripts/main.js"></script>
+    </body>
+</html>
+
