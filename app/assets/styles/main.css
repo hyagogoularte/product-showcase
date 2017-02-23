@@ -1,5 +1,10 @@
+@font-face {
+	font-family: myFirstFont;
+	src: url('font/Tahoma.ttf');
+}
+
 body {
-	font-family: Tahoma, Verdana, Segoe, sans-serif;
+	font-family:  myFirstFont, Verdana, Segoe, sans-serif;
 }
 
 a {
@@ -47,7 +52,7 @@ a {
 	font-size: 14pt;
 	line-height: 41px;
 	vertical-align: middle;
-	font-weight: bolder;
+	font-weight: initial;
 }
 
 .container-products {
@@ -151,7 +156,7 @@ a {
 }
 
 .container-products .box-recommended-products {
-	width: calc(100% - 25px - 25px - 10px);
+	width: calc(100% - 25px - 25px - 8px);
 	height: 100%;
 	display: inline-block;
 	overflow: hidden;
@@ -180,7 +185,7 @@ a {
 
 .recommended-products .products-navigate-prev,
 .recommended-products .products-navigate-next {
-	width: 25px;
+	width: 24px;
 	height: 100%;
 	clear: none;
 	display: inline-block;
@@ -199,7 +204,7 @@ a {
 
 .recommended-products .products-navigate-next #navigate-next,
 .recommended-products .products-navigate-prev #navigate-prev {
-	width: 25px;
+	width: 24px;
 	height: 36px;
 	margin-top: 60px;
 }
