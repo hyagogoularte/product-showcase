@@ -13,4 +13,4 @@ Os seguintes quesitos serão avaliados neste desafio:
 ## Para visualizar o teste, [acesse aqui!](https://hyagogoularte.github.io/product-showcase/app/)
 #### Para acessar o teste por completo, é preciso liberar o carregamento de scripts não "seguros", pois é usado JSONP. 
 
-![Imagem exibindo o bloqueio do script não seguro](http://imgur.com/Ksl3JM8)
+[script_não_seguro](http://imgur.com/Ksl3JM8)
