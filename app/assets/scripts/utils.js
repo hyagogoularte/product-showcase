@@ -4,11 +4,10 @@ function isValidImage(url) {
 	return img.height > 0;
 }
 
-function getJSON(url, callback){
+function getJSONP(url, callback){
     var script = document.createElement('script'),
         head = document.getElementsByTagName('head')[0] || document.documentElement;
 
-    // rescrever para pegar o valor do callback da url 
     window['X'] = function(data) {
         head.removeChild(script);
         callback && callback(data);

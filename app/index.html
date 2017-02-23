@@ -2,29 +2,29 @@
 <html>
     <meta charset="UTF-8">
     <head>
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="assets/styles/reset.css" type="text/css" />
         <link rel="stylesheet" href="assets/styles/main.css" type="text/css" />
         
     </head>
 
     <script id="product-template" type="x-template">
-        <a href="{{detailUrl}}" target="_blank">
+        <a class="result-product-detail-url" href="" target="_blank">
         	<section class="product-box">
 	        	<figure class="product-image">
-	        		<img src="{{imageName}}" width="152" height="120">
+	        		<img class="result-product-image-name" src="" width="152" height="120">
 	        	</figure>
 	        	<div class="product-description">
-	        		<span id="result-product-descrption"></span>
+	        		<span class="result-product-description"></span>
 	        	</div>
 	        	<div class="product-price">
 	        		<div class="product-old-price">
-	        			De: <span id="result-product-old-price"></span>
+	        			De: <span class="result-product-old-price"></span>
 	        		</div>
 	        		<div class="product-current-price">
-	        			Por: <span id="result-product-price"></span>
+	        			Por: <span class="result-product-price"></span>
 	        		</div>
 	        		<div class="product-divided-price">
-	        			<span id="result-product-payment-conditions"></span> <br> sem juros
+	        			<span class="result-product-payment-conditions"></span> <br> sem juros
 	        		</div>
 	        	</div>
 	        </section>
@@ -59,9 +59,6 @@
 
         <script src="assets/scripts/utils.js"></script>
         <script src="assets/scripts/main.js"></script>
-
-        <script type="text/javascript" src="http://roberval.chaordicsystems.com/challenge/challenge.json?callback=X"></script>
-
     </body>
 </html>
 
