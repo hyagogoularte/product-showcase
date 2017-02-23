@@ -12,20 +12,7 @@
 			template = document.getElementById("product-template").innerHTML,
 			div = document.createElement('div');
 
-		div.innerHTML = template;
-		div.getElementsByClassName('result-product-detail-url')[0].href = 'http://' + item.detailUrl;
-
-		var tempImage = defaultImage;
-		if(isValidImage(item.imageName)) {
-			tempImage = item.imageName;
-		}
-
-		div.getElementsByClassName('result-product-image-name')[0].src = tempImage;
-		div.getElementsByClassName('result-product-description')[0].innerHTML = item.name;
-		div.getElementsByClassName('result-product-old-price')[0].innerHTML = item.oldPrice;
-		div.getElementsByClassName('result-product-price')[0].innerHTML = item.price;
-		div.getElementsByClassName('result-product-payment-conditions')[0].innerHTML = item.productInfo.paymentConditions;
-		box.appendChild(div);
+		box.appendChild(returnCompletedTemplate(div, template, item));
 	}
 
 	function buildProductsList(items) {
@@ -35,25 +22,29 @@
 			var template = document.getElementById("product-template").innerHTML,
 				li = document.createElement('li');
 
-			li.innerHTML = template;
-
-			var tempImage = defaultImage;
-			if(isValidImage(item.imageName)) {
-				tempImage = item.imageName;
-			}
-
-			if(item.oldPrice === null){
-				li.getElementsByClassName('product-old-price')[0].style.display = 'none'
-			}
-
-			li.getElementsByClassName('result-product-detail-url')[0].href = 'http://' + item.detailUrl;
-			li.getElementsByClassName('result-product-image-name')[0].src = tempImage;
-			li.getElementsByClassName('result-product-description')[0].innerHTML = item.name;
-			li.getElementsByClassName('result-product-old-price')[0].innerHTML = item.oldPrice;
-			li.getElementsByClassName('result-product-price')[0].innerHTML = item.price;
-			li.getElementsByClassName('result-product-payment-conditions')[0].innerHTML = item.productInfo.paymentConditions;
-			box.appendChild(li);
+			box.appendChild(returnCompletedTemplate(li, template, item));
 		});
+	}
+
+	function returnCompletedTemplate(el, template, item) {
+		el.innerHTML = template;
+		var tempImage = defaultImage;
+		if(isValidImage(item.imageName)) {
+			tempImage = item.imageName;
+		}
+
+		if(item.oldPrice === null){
+			el.getElementsByClassName('product-old-price')[0].style.display = 'none'
+		}
+
+		el.getElementsByClassName('result-product-detail-url')[0].href = 'http://' + item.detailUrl;
+		el.getElementsByClassName('result-product-image-name')[0].src = tempImage;
+		el.getElementsByClassName('result-product-description')[0].innerHTML = item.name;
+		el.getElementsByClassName('result-product-old-price')[0].innerHTML = item.oldPrice;
+		el.getElementsByClassName('result-product-price')[0].innerHTML = item.price;
+		el.getElementsByClassName('result-product-payment-conditions')[0].innerHTML = item.productInfo.paymentConditions;
+
+		return el;
 	}
 
 	function setup(widget) {
