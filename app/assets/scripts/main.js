@@ -28,17 +28,17 @@
 
 	function returnCompletedTemplate(el, template, item) {
 		el.innerHTML = template;
-		var tempImage = defaultImage;
-		if(isValidImage(item.imageName)) {
-			tempImage = item.imageName;
+		var tempImage = 'http:' + item.imageName;
+		if(!isValidImage(tempImage)) {
+			tempImage = defaultImage;
 		}
 
 		if(item.oldPrice === null){
 			el.getElementsByClassName('product-old-price')[0].style.display = 'none'
 		}
 
-		el.getElementsByClassName('result-product-detail-url')[0].href = 'http://' + item.detailUrl;
-		el.getElementsByClassName('result-product-image-name')[0].src = tempImage;
+		el.getElementsByClassName('result-product-detail-url')[0].href = 'http:' + item.detailUrl;
+		el.getElementsByClassName('result-product-image-name')[0].src = 'http:' + item.imageName;
 		el.getElementsByClassName('result-product-description')[0].innerHTML = item.name;
 		el.getElementsByClassName('result-product-old-price')[0].innerHTML = item.oldPrice;
 		el.getElementsByClassName('result-product-price')[0].innerHTML = item.price;
