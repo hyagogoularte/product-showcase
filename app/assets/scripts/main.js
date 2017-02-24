@@ -38,7 +38,7 @@
 		}
 
 		el.getElementsByClassName('result-product-detail-url')[0].href = 'http:' + item.detailUrl;
-		el.getElementsByClassName('result-product-image-name')[0].src = 'http:' + item.imageName;
+		el.getElementsByClassName('result-product-image-name')[0].src = tempImage;
 		el.getElementsByClassName('result-product-description')[0].innerHTML = item.name;
 		el.getElementsByClassName('result-product-old-price')[0].innerHTML = item.oldPrice;
 		el.getElementsByClassName('result-product-price')[0].innerHTML = item.price;

@@ -1,7 +1,8 @@
 function isValidImage(url) {
 	var img = new Image();
 	img.src = url;
-	return img.height > 0;
+    img.onload = function() {};
+    return img.height > 0;	
 }
 
 function getJSONP(url, callback){
